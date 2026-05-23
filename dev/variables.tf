@@ -60,7 +60,7 @@ variable "app_repo_url" {
 variable "app_repo_path" {
   description = "Path within the repository for the application manifests"
   type        = string
-  default     = "3tire-configs"
+  default     = "3tire-configs/overlays/dev"
 }
 
 # Tags

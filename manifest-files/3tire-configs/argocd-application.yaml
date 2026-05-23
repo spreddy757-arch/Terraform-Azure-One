@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/itsBaivab/gitops-configs.git
     targetRevision: HEAD
-    path: 3tire-configs
+    path: 3tire-configs/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: 3tirewebapp-dev

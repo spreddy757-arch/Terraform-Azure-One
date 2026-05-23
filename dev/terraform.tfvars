@@ -13,7 +13,7 @@ argocd_namespace = "argocd"                                          # Namespace
 
 # Application Deployment Configuration 
 app_repo_url  = "https://github.com/itsBaivab/gitops-configs.git" # Repository containing your application manifests
-app_repo_path = "3tire-configs"                                   # Path within app repository containing Kubernetes manifests
+app_repo_path = "3tire-configs/overlays/dev"                                   # Path within app repository containing Kubernetes manifests
 
 tags = {
   Environment = "development"
