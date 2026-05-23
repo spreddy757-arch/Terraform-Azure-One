@@ -1,5 +1,7 @@
 # 🚀 AKS GitOps Deployment Guide
 
+**Note, this repo was cloned from public repository and is being used for completely different Generative AI Analysis.
+
 **Complete step-by-step guide to deploy AKS with GitOps using Terraform and ArgoCD**
 
 This repository provides a production-ready setup for deploying applications to Azure Kubernetes Service (AKS) using GitOps principles with ArgoCD and Terraform.
@@ -33,8 +35,6 @@ This repository provides a production-ready setup for deploying applications to 
 - **State Management**: Terraform with remote state (optional)
 - **Authentication**: Azure AD integration with local admin accounts
 - **Networking**: Azure CNI with network policies
-
-<img width="1519" height="836" alt="Screenshot 2025-07-18 at 5 31 50 AM" src="https://github.com/user-attachments/assets/c1ce8dfc-cb87-4620-bfad-6c6d573d1709" />
 
 
 ### Environment Structure
