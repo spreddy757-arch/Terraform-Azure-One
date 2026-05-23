@@ -4,3 +4,4 @@ metadata:
   name: 3tirewebapp-dev
   labels:
     app: 3tirewebapp
+    istio-injection: enabled
