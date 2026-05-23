@@ -1,0 +1,53 @@
+# Sample busybox deployment for exercising the Istio service mesh in dev
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-sample
+  labels:
+    app: busybox-sample
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-sample
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: busybox-sample
+        version: v1
+      annotations:
+        # Explicitly request Istio sidecar injection (also enabled namespace-wide)
+        sidecar.istio.io/inject: "true"
+    spec:
+      containers:
+        - name: busybox
+          image: busybox:1.36
+          command: ["httpd", "-f", "-p", "8080"]
+          ports:
+            - name: http
+              containerPort: 8080
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
+            limits:
+              cpu: 50m
+              memory: 32Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: busybox-sample
+  labels:
+    app: busybox-sample
+spec:
+  selector:
+    app: busybox-sample
+  ports:
+    # Port name "http" lets Istio apply HTTP protocol detection and telemetry
+    - name: http
+      port: 8080
+      targetPort: http

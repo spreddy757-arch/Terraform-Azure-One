@@ -6,4 +6,5 @@ namespace: 3tirewebapp-dev
 
 resources:
   - namespace.yaml
+  - busybox-sample.yaml
   - ../../base
